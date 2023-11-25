@@ -7,18 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>1060</width>
-    <height>640</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(192, 191, 188);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>9</y>
+      <y>40</y>
       <width>1031</width>
       <height>321</height>
      </rect>
@@ -43,11 +46,21 @@
       <x>120</x>
       <y>420</y>
       <width>171</width>
-      <height>25</height>
+      <height>35</height>
      </rect>
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>469</y>
+      <width>671</width>
+      <height>321</height>
+     </rect>
     </property>
    </widget>
   </widget>
