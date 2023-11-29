@@ -4,6 +4,8 @@ from PyQt6 import uic
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QMainWindow, QLabel, QLineEdit, QPushButton, QTextEdit
 
+from CSVManager import CSVManager
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -42,5 +44,8 @@ class MainWindow(QMainWindow):
         if not self.validation_input_number():
             self.text_edit.setText('Ошибка')
             return
-        self.text_edit.setText('Информация об элементе')
+
+        csv_manager = CSVManager()
+
+        self.text_edit.setText(csv_manager.get_data_by_id(int(self.input.text())))
 
