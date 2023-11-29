@@ -44,6 +44,4 @@ class CSVManager:
     def get_data_by_id(self, el_id: int) -> str:
         data = self.reformat_data(self.read_file())
 
-        print(data[el_id-1][el_id])
-
         return data[el_id-1][el_id]

@@ -26,6 +26,8 @@ class MainWindow(QMainWindow):
 
         self.button: QPushButton = self.findChild(QPushButton, 'pushButton')
 
+        self.csv_manager = CSVManager()
+
         self.set_events()
 
     def set_image(self, image_path: str):
@@ -36,7 +38,7 @@ class MainWindow(QMainWindow):
         self.button.clicked.connect(self.show_element_data)
 
     def validation_input_number(self):
-        if not self.input.text().isdigit():
+        if not self.input.text().isdigit() or int(self.input.text()) < 1 or int(self.input.text()) > len(self.csv_manager.read_file()):
             return False
         return True
 
@@ -45,7 +47,5 @@ class MainWindow(QMainWindow):
             self.text_edit.setText('Ошибка')
             return
 
-        csv_manager = CSVManager()
-
-        self.text_edit.setText(csv_manager.get_data_by_id(int(self.input.text())))
+        self.text_edit.setText(self.csv_manager.get_data_by_id(int(self.input.text())))
 
